@@ -34,6 +34,6 @@ class FeedbackJob implements ShouldQueue
 
     public function handle()
     {
-        Mail::to($this->user['email'])->send(new FeedbackMail($this->user));
+        Mail::to('ravimajithiya786@gmail.com')->send(new FeedbackMail($this->user));
     }
 }
