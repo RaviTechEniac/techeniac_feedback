@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/feedback', function () {
+    return view('feedback-form');
+})->name('feedback_form');
+
+Route::post('/feedback-send',[App\Http\Controllers\FeedbackController::class, 'store'])->name('send_feedback');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
